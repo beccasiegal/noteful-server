@@ -19,6 +19,7 @@ app.use('/api/folders', foldersRouter)
 app.use(function errorHandler(error, req, res, next) {
     let response
     if (NODE_ENV === 'production') {
+        console.log(error.message);
         response = { error: { message: 'server error' } }
     } else {
         console.error(error)
