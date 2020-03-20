@@ -27,4 +27,8 @@ app.use(function errorHandler(error, req, res, next) {
     res.status(500).json(response)
 })
 
+
+app.get('/api/folders', (req, res) => {
+    res.send('Hello, folders')
+  })
 module.exports = app;
