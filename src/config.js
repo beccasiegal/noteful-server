@@ -3,8 +3,8 @@ module.exports = {
 	NODE_ENV: process.env.NODE_ENV || "development",
 	DATABASE_URL:
 		process.env.DATABASE_URL ||
-		"postgres://rebecca:RedSox25@localhost/noteful",
+		"postgresql://rebecca:RedSox25@localhost/noteful",
 	TEST_DATABASE_URL:
 		process.env.TEST_DATABASE_URL ||
-		"postgres://rebecca@localhost/noteful-test"
+		"postgresql://rebecca@localhost/noteful-test"
 };
