@@ -6,6 +6,6 @@ module.exports = {
 		"postgresql://rebecca:RedSox25@localhost/noteful",
 	TEST_DATABASE_URL:
 		process.env.TEST_DATABASE_URL ||
-		"postgresql://rebecca@localhost/noteful-test"
-		console.log(DATABASE_URL;
+		"postgresql://rebecca@localhost/noteful-test",
+	
 };
