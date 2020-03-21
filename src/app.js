@@ -34,14 +34,5 @@ app.get('/', (req, res) => {
 
   app.use(FoldersRouter);
 
-app.use(function errorHandler(error, req, res) {
-  let response;
-  if (process.env.NODE_ENV === 'production') {
-    response = {error: {message: 'server error'} };
-  } else {
-    console.error(error);
-    response= {message:error.message, error};
-  }
-  res.status(500).json(response);
-});
+
 module.exports = app;
