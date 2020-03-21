@@ -29,7 +29,7 @@ app.use(function errorHandler(error, req, res, next) {
 
 
 app.get('/', (req, res) => {
-    res.send('Hello, folders')
+    res.send('Hello, world!')
   })
 
   app.use(FoldersRouter);
