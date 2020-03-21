@@ -32,7 +32,5 @@ app.get('/', (req, res) => {
     res.send('Hello, world!')
   })
 
-  app.use(FoldersRouter);
-
 
 module.exports = app;
