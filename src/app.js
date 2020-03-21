@@ -28,7 +28,7 @@ app.use(function errorHandler(error, req, res, next) {
 })
 
 
-app.get('/api/folders', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello, folders')
   })
 module.exports = app;
