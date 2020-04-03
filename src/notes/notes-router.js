@@ -6,11 +6,9 @@ const NotesService = require('./notes-service')
 const notesRouter = express.Router()
 const jsonParser = express.json()
 
-// What is this serializeFolder function doing?
 const serializeNote = note => ({
     id: note.id,
     name: xss(note.name),
-    modified: note.modified,
     folderid: xss(note.folderid),
     content: xss(note.content)
 
@@ -50,7 +48,6 @@ notesRouter
 })
 
 notesRouter
-// need explanation of the .all block
     .route('/:noteId')
     .all((req, res, next) => {
         NotesService.getById(
