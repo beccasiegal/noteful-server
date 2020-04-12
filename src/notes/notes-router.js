@@ -78,5 +78,30 @@ notesRouter
         })
         .catch(next)
     })
+    .patch(jsonParser, (req, res, next) => {
+        const {name, content, folderid } = req.body;
+        console.log("notes-router.js : req.body : ", req.body)
+        const noteToUpdate = { name, content, folderid }
+        console.log("notes-router.js : noteToUpdate : ", noteToUpdate)
+
+        const numberOfValues = Object.values(noteToUpdate).filter(Boolean)
+			.length;
+		if (numberOfValues ===0) {
+			return res.status(400).json({
+				error: {
+					message: `Request body must contain 'name, content or folderid'`
+				}
+			});
+        }
+        NotesService.updateNote(
+            req.app.get('db'),
+            req.params.noteId,
+            noteToUpdate
+        )
+        .then(numRowsAffected => {
+            res.status(204).end();
+        })
+        .catch(next)
+    })
 
     module.exports = notesRouter
